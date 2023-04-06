@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+
+        body {
+            background: url("pexels-hert-niks-3224156.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            margin:auto;
+        }
+
+        #title {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #info {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #link {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #mainDiv {
+            position: relative;
+            top: 14vh;
+            width:40vw;
+            height: 30vw;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 5vw;
+        }
+        #mainDiv2 {
+            position: fixed;
+            top: 14vh;
+            width:40vw;
+            height: 30vw;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 5vw;
+            display: none;
+        }
+        html {
+            display:flex;
+        }
+        .infoDiv {
+            position: fixed;
+            backdrop-filter: blur(0px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 0 5vw 5vw 0;
+            top: 80vh;
+            left: 0vw;
+            width: 20%;
+            height: 18%;
+        }
+        .infoDiv p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5vw;
+            position: relative;
+            left: 4%;
+        }
+        .navBar {
+            position: fixed;
+            left:0%;
+            width: 100%;
+            height: 5%;
+            backdrop-filter: blur(10px);
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 0;
+        }
+        .navBar button {
+            float: right;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            width: 5%;
+            height: 100%;
+            border-radius: 1vw;
+            background-color: transparent;
+            font-size: 1vw;
+            backdrop-filter: blur(5px);
+            border: 3px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+        .navBar button:hover {
+            float: right;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            width: 5%;
+            height: 100%;
+            font-size: 1vw;
+            border-radius: 1vw;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.5);
+        }  
+        #navbarText {
+            position: fixed;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5vw;
+            top:-1.2vw;
+            left: 1vw;
+        }
+
+    </style>
+
+
+    <body>
+
+        <div class="navBar">
+
+            <p id="navbarText"> <a onclick="window.location=`index.html`"> Novogames </a> </p>
+
+            <button type="button" onclick="location.href='games.html'"> Games </button>
+            <button type="button" onclick="location.href='proxies.html'"> Proxies </button>
+            <button type="button" onclick="location.href='bot.html'"> Widgit </button>
+            <button type="button" onclick="location.href='about.html'"> About </button>
+            <button type="button" onclick="location.href='discord.html'"> Discord </button>
+
+        </div>
+
+        <div id="main-div-centering">
+
+            <div id="mainDiv">
+
+                <p style="font-size: 2vw;" id="info"> Our discord server can be found right <a onclick="link(`https://www.discord.gg/hi`, true)" style="color: blue;"> here </a> </p>
+
+                <p style="font-size: 2vw;" id="info"> Or, you can DM me: Systemless #7302</p>
+    
+            </div>
+
+        </div>
+
+        <div id="mainDiv2">
+
+            <p id="title"> Warning </p>
+            <p style="font-size: 2vw;" id="info"> The following leak is probably blocked, continue at your own risk </p>
+
+            <p style="font-size: 2vw;" id="link"> </p>
+
+        </div>
+    
+    </body>
+
+    <script>
+
+        linkToGo = null;
+
+        function link(link, dangrous) {
+
+            if(!dangrous) {window.open(link); } else {
+
+                linkToGo = link;    
+
+                document.getElementById("mainDiv2").style.display="initial";
+
+                document.getElementById("link").innerHTML=`<a onclick="window.open('`+linkToGo+`'); document.getElementById('mainDiv2').style.display='none';" style="color: blue;"> `+linkToGo+ ` </a>`
+
+            }
+
+        }
+
+    </script>
+
+</html>

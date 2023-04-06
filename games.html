@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+
+        div::-webkit-scrollbar{
+            display: none;
+        }
+
+        body {
+            background: url("pexels-hert-niks-3224156.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            margin:auto;
+        }
+
+        #title {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #info {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #link {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #mainDiv {
+            position: relative;
+            top: 14vh;
+            width:40vw;
+            height: 30vw;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 5vw;
+            overflow-y:auto 
+        }
+        #mainDiv2 {
+            position: fixed;
+            top: 14vh;
+            width:40vw;
+            height: 30vw;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 5vw;
+            display: none;
+        }
+        html {
+            display:flex;
+        }
+        .infoDiv {
+            position: fixed;
+            backdrop-filter: blur(0px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 0 5vw 5vw 0;
+            top: 80vh;
+            left: 0vw;
+            width: 20%;
+            height: 18%;
+        }
+        .infoDiv p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5vw;
+            position: relative;
+            left: 4%;
+        }
+        .navBar {
+            position: fixed;
+            left:0%;
+            width: 100%;
+            height: 5%;
+            backdrop-filter: blur(10px);
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 0;
+        }
+        .navBar button {
+            float: right;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            width: 5%;
+            height: 100%;
+            border-radius: 1vw;
+            background-color: transparent;
+            font-size: 1vw;
+            backdrop-filter: blur(5px);
+            border: 3px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+        .navBar button:hover {
+            float: right;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            width: 5%;
+            height: 100%;
+            font-size: 1vw;
+            border-radius: 1vw;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.5);
+        }  
+        #navbarText {
+            position: fixed;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5vw;
+            top:-1.2vw;
+            left: 1vw;
+        }
+        #gameButton{
+            position: relative;
+            float: right;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            width: 90%;
+            height: 10%;
+            border-radius: 1vw;
+            background-color: transparent;
+            font-size: 1vw;
+            backdrop-filter: blur(5px);
+            border: 3px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+            color:black;
+            left: -5%;
+        }
+        #gameButton:hover {
+            position: relative;
+            float: right;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            height: 10%;
+            font-size: 1.3vw;
+            border-radius: 1vw;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.5);
+            color:black;
+            left:0%;
+
+        }  
+
+    </style>
+
+
+    <body>
+
+        <div class="navBar">
+
+            <p id="navbarText"> <a onclick="window.location=`index.html`"> Novogames </a> </p>
+
+            <button type="button" onclick="location.href='games.html'"> Games </button>
+            <button type="button" onclick="location.href='proxies.html'"> Proxies </button>
+            <button type="button" onclick="location.href='bot.html'"> Widgit </button>
+            <button type="button" onclick="location.href='about.html'"> About </button>
+            <button type="button" onclick="location.href='discord.html'"> Discord </button>
+
+        </div>
+
+        <div id="main-div-centering">
+
+            <div id="mainDiv">
+
+                
+    
+            </div>
+
+        </div>
+
+        <div id="mainDiv2">
+
+            <p id="title"> Warning </p>
+            <p style="font-size: 2vw;" id="info"> The following leak is probably blocked, continue at your own risk </p>
+
+            <p style="font-size: 2vw;" id="link"> </p>
+
+        </div>
+    
+    </body>
+
+    <script>
+
+        linkToGo = null;
+
+        function link(link, dangrous) {
+
+            if(!dangrous) {window.open(link); } else {
+
+                linkToGo = link;    
+
+                document.getElementById("mainDiv2").style.display="initial";
+
+                document.getElementById("link").innerHTML=`<a onclick="window.open('`+linkToGo+`'); document.getElementById('mainDiv2').style.display='none';" style="color: blue;"> `+linkToGo+ ` </a>`
+
+            }
+
+        }
+
+        gameJSON = `[
+    {
+        "type": "app",
+        "link": "https://www.discord.com",
+        "name": "Discord"
+    },
+    {
+        "type": "app",
+        "link": "https://www.github.com",
+        "name": "Github"
+    },
+    {
+        "type": "app",
+        "link": "https://www.google.com",
+        "name": "Google"
+    },
+    {
+        "type": "app",
+        "link": "https://www.reddit.com",
+        "name": "Reddit"
+    },
+    {
+        "type": "app",
+        "link": "https://www.spotify.com",
+        "name": "Spotify"
+    },
+    {
+        "type": "app",
+        "link": "https://www.HBOMax.com.com",
+        "name": "HBO Max"
+    },
+    {
+        "type": "sep",
+        "link": null,
+        "name": null
+    },
+    {
+        "type": "game",
+        "link": "https://www.diep.io",
+        "name": "Diep io"
+    },
+    {
+        "type": "game",
+        "link": "https://c948ebn9d7mt7708ltutkt0ncbqleedo-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=https://sites.google.com/site/x002d4f5/ts3.xml&container=enterprise&view=default&lang=en&country=ALL&sanitize=0&v=d46b9372ddb3ad67&libs=core&mid=88&parent=https://www.sites.google.com/site/unblockedgame76/time-shooter-3#st=e%3DAIHE3cAMx%252BTkdE29en443d6SMdvRaR2e73JkObRE3JgoeA5rn7vTsbKXq5LjHkwynHSObPk19a8K7kXtP9QYLNQIvnBoFsF%252Bkv2idkl8xaNGbdgqEfw1X2HvzmsF1OzNiOq9vJiS741P%26c%3Denterprise&rpctoken=-7035427037341464677",
+        "name": "Time Shooter S.W.A.T"
+    },
+    {
+        "type": "game",
+        "link": "https://ldaiodgdl1b4supcg3mhrvjqsf9a60v3-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=https://sites.google.com/site/x001n5b6/ts2.xml&container=enterprise&view=default&lang=en&country=ALL&sanitize=0&v=2e5a0cc0aae325b3&libs=core&mid=81&parent=https://www.sites.google.com/site/unblockedgame76/time-shooter-2#st=e%3DAIHE3cCsNFO0RMGksiTDMeiUwhGb3ijXAmb7dBcoDjGZWHwpGhoNmi%252FqZ4ESj1hYdjNe0w65cBvf4pgA8z95YzcX33fIkg1dfyXYEPPO%252Fiu5KUAMTZe46JB%252Fp83305SgM3BTMAdoBlJn%26c%3Denterprise&rpctoken=2042991891996557010",
+        "name": "Time Shooter 2"
+    },
+    {
+        "type": "game",
+        "link": "https://pablocp.github.io/HexGL/",
+        "name": "HexGL"
+    },
+    {
+        "type": "game",
+        "link": "https://bigfoot9999.github.io/Slope-Game/",
+        "name": "Slope"
+    },
+    {
+        "type": "game",
+        "link": "https://dorukyum.github.io/FNAF-Web/",
+        "name": "FNAF"
+    },
+    {
+        "type": "game",
+        "link": "https://play2048.co/",
+        "name": "2048"
+    },
+    {
+        "type": "game",
+        "link": "https://pfl2pdeuk0nmq8iran7b4pi05hl6ricb-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%252Fgun-mayhem.xml&container=enterprise&view=default&lang=en&country=ALL&sanitize=0&v=82efe9c6fd02cba2&libs=core&mid=45&parent=https://www.sites.google.com/site/unblockedgame76/gun-mayhem#st=e%3DAIHE3cDtYKjJSWL29pvPsV9zkgtZD5Hy5qMg6f689SEVBQmVDrPwhh7EQiPjVEEPSB4YViBn2WC4L6oFukEO%252Fj%252Fq%252FoBVqV1CMtpP64o2w7wmfozwe2etZdl1DZ3oRi0U%252FlyXOmHznAgj%26c%3Denterprise&rpctoken=3373154170635654928",
+        "name": "Gun Mayhem"
+    },
+    {
+        "type": "game",
+        "link": "games/eaglercraft.html",
+        "name": "Minecraft 1.5.2"
+    },
+    {
+        "type": "game",
+        "link": "lol",
+        "name": "Precision Client"
+    },
+    {
+        "type": "game",
+        "link": "https://mixtapeisfire.github.io/gba/launcher.html#pokemonred",
+        "name": "Pokemon FireRed"
+    },
+    {
+        "type": "game",
+        "link": "https://hc-tcg.fly.dev",
+        "name": "Hermitcraft TCG"
+    },
+    {
+        "type": "game",
+        "link": "https://lekug.github.io/tn6pS9dCf37xAhkJv/",
+        "name": "Run 3"
+    }
+
+]`;
+
+        var types = ["app", "game", "sep"];
+
+
+        function genGames() {
+
+            var gameList = JSON.parse(gameJSON)
+
+            for(var y = 0; y < types.length; y++) {
+
+                for(var x = 0; x < gameList.length; x++) {
+
+                    if(types[y] == gameList[x]["type"]) {
+
+                        if(types[y] != "sep") {
+
+                            buttonCss = `<button onclick="openPage('`+ gameList[x]["link"] +`')" id="gameButton"> `+ gameList[x]["name"] +` </button>`;
+
+                            document.getElementById("mainDiv").innerHTML += buttonCss;
+
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        genGames();
+
+    </script>
+
+</html>
