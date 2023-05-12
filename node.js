@@ -37,6 +37,9 @@ app.get('/proxies', function(req, res) {
 app.get('/proxies.html', function(req, res) {
     res.redirect('/proxies');
 });
+app.get('/register-sw.js', function(req, res) {
+    res.sendFile(path.join(__dirname, '/uv/register-sw.js'));
+});
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
