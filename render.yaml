@@ -1,5 +1,5 @@
   services:
   - type: web
-    name: artclass
+    name: novogames
     env: docker
     plan: free
