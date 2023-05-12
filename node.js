@@ -31,6 +31,12 @@ app.get('/games', function(req, res) {
 app.get('/games.html', function(req, res) {
     res.redirect('/games');
 });
+app.get('/proxies', function(req, res) {
+    res.sendFile(path.join(__dirname, '/uv/index.html'));
+});
+app.get('/proxies.html', function(req, res) {
+    res.redirect('/proxies');
+});
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
