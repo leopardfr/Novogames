@@ -330,8 +330,7 @@
                     if(types[y] == gameList[x]["type"]) {
 
                         if(types[y] != "sep") {
-
-                            buttonCss = `<button onclick="openPage('`+ gameList[x]["link"] +`')" id="gameButton"> `+ gameList[x]["name"] +` </button>`;
+                            buttonCss = `<button onclick="proxySite('`+ gameList[x]["link"] +`')" id="gameButton"> `+ gameList[x]["name"] +` </button>`;
 
                             document.getElementById("mainDiv").innerHTML += buttonCss;
 
@@ -344,6 +343,19 @@
         }
 
         genGames();
+
+        async function proxySite(url) {
+            try {
+                await registerSW();
+            } catch (err) {
+                error.textContent = "Failed to register service worker.";
+                errorCode.textContent = err.toString();
+                throw err;
+            }
+
+            const url = search(address.value, searchEngine.value);
+            location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+        }
 
     </script>
 
