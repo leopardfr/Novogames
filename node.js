@@ -31,10 +31,16 @@ server.listen({
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 app.get("/index.html", (req, res) => {
   res.redirect('/');
+});
+app.get("/about", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+app.get("/about.html", (req, res) => {
+  res.redirect('/about');
 });
 app.get("/games", (req, res) => {
   res.sendFile(__dirname + "/public/games.html");
@@ -49,13 +55,13 @@ app.get("/proxies.html", (req, res) => {
   res.redirect('/proxies');
 });
 app.get("/bot", (req, res) => {
-  res.sendFile(__dirname + "/bot.html");
+  res.sendFile(__dirname + "/public/bot.html");
 });
 app.get("/bot.html", (req, res) => {
   res.redirect('/bot');
 });
 app.get("/discord", (req, res) => {
-  res.sendFile(__dirname + "/discord.html");
+  res.sendFile(__dirname + "/public/discord.html");
 });
 app.get("/discord.html", (req, res) => {
   res.redirect('/discord');
