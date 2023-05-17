@@ -343,7 +343,9 @@
         }
 
         genGames();
+        
 
+        //this part of the code was taken from interstellar (interstellarnetwork/interstellar)
 
         function proxySite(url) {
             let iframe = document.querySelector(".iframe.active");
@@ -356,9 +358,7 @@
                 if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
                 else if (!(url.startsWith("https://") || url.startsWith("http://")))
                 url = "https://" + url;
-                //pass the encoded url to the second page
-                sessionStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-                location.href = "go";
+                location.href = __uv$config.prefix +__uv$config.encodeUrl(url)
             });
         }
 
