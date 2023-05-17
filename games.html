@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <script href="load.js"></script>
     </head>
 
     <style>
@@ -344,18 +345,7 @@
 
         genGames();
 
-        async function proxySite(url) {
-            try {
-                await registerSW();
-            } catch (err) {
-                error.textContent = "Failed to register service worker.";
-                errorCode.textContent = err.toString();
-                throw err;
-            }
-
-            const url = search(address.value, searchEngine.value);
-            location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
-        }
+        
 
     </script>
 
