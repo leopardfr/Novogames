@@ -3,7 +3,7 @@ const createBareServer = require("@tomphttp/bare-server-node");
 const server = http.createServer();
 const express = require("express");
 const bare = createBareServer("/bare/");
-const app = express();a
+const app = express();
 
 // serve your css as static
 app.use(express.static(__dirname+"/public/"));
