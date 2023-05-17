@@ -1,3 +1,7 @@
+import createBareServer from "@tomphttp/bare-server-node";
+import http from "node:http";
+
+const server = http.createServer();
 const express = require("express");
 const bare = createBareServer("/bare/");
 const app = express();
@@ -6,8 +10,32 @@ app.listen(8080, () => {
   console.log("Application started and Listening on port 3000");
 });
 
+
+
 // serve your css as static
 app.use(express.static(__dirname+"/public/"));
+
+
+server.on("request", (req, res) => {
+  if (bare.shouldRoute(req)) {
+    bare.routeRequest(req, res);
+  } else {
+    app(req, res);
+  }
+});
+
+server.on("upgrade", (req, socket, head) => {
+  if (bare.shouldRoute(req)) {
+    bare.routeUpgrade(req, socket, head);
+  } else {
+    socket.end();
+  }
+});
+
+server.listen({
+  port: 8080,
+});
+
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -38,26 +66,4 @@ app.get("/discord", (req, res) => {
 });
 app.get("/discord.html", (req, res) => {
   res.redirect('/discord');
-});
-
-const server = createServer();
-
-server.on("request", (req, res) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
-});
-
-server.on("upgrade", (req, socket, head) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeUpgrade(req, socket, head);
-  } else {
-    socket.end();
-  }
-});
-
-server.listen({
-  port: 8080,
 });
