@@ -37,7 +37,7 @@ app.get("/index.html", (req, res) => {
   res.redirect('/');
 });
 app.get("/games", (req, res) => {
-  res.sendFile(__dirname + "/games.html");
+  res.sendFile(__dirname + "/public/games.html");
 });
 app.get("/games.html", (req, res) => {
   res.redirect('/games');
