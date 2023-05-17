@@ -3,13 +3,7 @@ const createBareServer = require("@tomphttp/bare-server-node");
 const server = http.createServer();
 const express = require("express");
 const bare = createBareServer("/bare/");
-const app = express();
-
-app.listen(8080, () => {
-  console.log("Application started and Listening on port 3000");
-});
-
-
+const app = express();a
 
 // serve your css as static
 app.use(express.static(__dirname+"/public/"));
