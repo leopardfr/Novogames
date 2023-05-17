@@ -31,7 +31,7 @@ server.listen({
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile("/index.html");
 });
 app.get("/index.html", (req, res) => {
   res.redirect('/');

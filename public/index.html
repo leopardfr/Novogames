@@ -33,7 +33,7 @@ div::-webkit-scrollbar{
         }
 
         body {
-            background: url("public/pexels-hert-niks-3224156.jpg") no-repeat center center fixed; 
+            background: url("/pexels-hert-niks-3224156.jpg") no-repeat center center fixed; 
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -177,13 +177,35 @@ div::-webkit-scrollbar{
 
   </style>
   <body>
-    <form id="uv-form" class="flex-center">
-      <input
-        id="uv-search-engine"
-        value="https://www.google.com/search?q=%s"
-        type="hidden"
-      />
-      <input id="uv-address" type="text" placeholder="Search the web freely" />
-    </form>
+
+
+    <div class="navBar">
+
+      <p id="navbarText"> <a onclick="window.location=`index.html`"> Novogames </a> </p>
+
+      <button type="button" onclick="location.href='games.html'"> Games </button>
+      <button type="button" onclick="location.href='proxies.html'"> Proxies </button>
+      <button type="button" onclick="location.href='about.html'"> About </button>
+      <button type="button" onclick="location.href='discord.html'"> Discord </button>
+
+  </div>
+
+  <div id="main-div-centering">
+
+      <div id="mainDiv">
+
+        <form id="uv-form" class="flex-center">
+          <input
+            id="uv-search-engine"
+            value="https://www.google.com/search?q=%s"
+            type="hidden"
+          />
+          <input id="uv-address" type="text" placeholder="Search the web freely" />
+        </form>
+
+
+      </div>
+
+  </div>
   </body>
 </html>
