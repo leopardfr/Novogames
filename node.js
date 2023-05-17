@@ -1,6 +1,5 @@
-import createBareServer from "@tomphttp/bare-server-node";
-import http from "node:http";
-
+const http = require('http');
+const createBareServer = require("@tomphttp/bare-server-node");
 const server = http.createServer();
 const express = require("express");
 const bare = createBareServer("/bare/");
