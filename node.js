@@ -31,7 +31,7 @@ server.listen({
 
 
 app.get("/", (req, res) => {
-  res.sendFile("/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 app.get("/index.html", (req, res) => {
   res.redirect('/');
@@ -43,7 +43,7 @@ app.get("/games.html", (req, res) => {
   res.redirect('/games');
 });
 app.get("/proxies", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/public/proxy.html");
 });
 app.get("/proxies.html", (req, res) => {
   res.redirect('/proxies');
