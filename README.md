@@ -47,3 +47,4 @@ More info is avaliable in are discord server!
 Thanks to:
 
 Bubbo (Bubbo#0001, dont dm him as he is probably busy, instead join his discord: https://discord.gg/gointerstellar).
+Bigfoot (Bigfoot#9033, dont dm him like bubbo, instead join: https://dsc.gg/bigfoot).
