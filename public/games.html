@@ -28,6 +28,64 @@
     </head>
 
     <style>
+
+        div::-webkit-scrollbar{
+            display: none;
+        }
+
+        body {
+            background: url("pexels-hert-niks-3224156.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            margin:auto;
+        }
+
+        #title {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #info {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #link {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 5vw;
+            top: 5vh;
+        }
+        #mainDiv {
+            position: relative;
+            top: 14vh;
+            width:40vw;
+            height: 30vw;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 5vw;
+            overflow-y:auto 
+        }
+        #mainDiv2 {
+            position: fixed;
+            top: 14vh;
+            width:40vw;
+            height: 30vw;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255,255,255,0.5);
+            border-radius: 5vw;
+            display: none;
+        }
+        html {
+            display:flex;
+        }
         #gameButton{
             position: relative;
             float: right;
