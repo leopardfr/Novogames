@@ -1,167 +1,113 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
-
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  margin: 0;
-  background: #111;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  background: url("pexels-hert-niks-3224156.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin:auto;
 }
 
-.fa-magnifying-glass {
-  color: white;
+#title {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 5vw;
+  top: 5vh;
 }
-
-.flex-center {
-  display: flex;
-  justify-content: center;
+#info {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 5vw;
+  top: 5vh;
 }
-
-.header-center {
-  align-items: center;
-  flex-direction: column;
-  margin-top: 10%;
+#link {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 5vw;
+  top: 5vh;
 }
-
-.left-margin {
-  margin: 0px 16px;
+#mainDiv {
+  position: relative;
+  top: 14vh;
+  width:40vw;
+  height: 30vw;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255,255,255,0.5);
+  border-radius: 5vw;
 }
-
-#uv-error {
-  color: #ff6666 !important;
-  white-space: pre-wrap;
-}
-
-#uv-error-code {
-  font-size: 12px;
-  color: #fff;
-  font-family: "Courier New", Courier, monospace;
-}
-
-#uv-register-sw {
-  color: white;
-  background: #555555;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 6px;
-  padding: 16px 20px;
-  line-height: 16px;
+#mainDiv2 {
+  position: fixed;
+  top: 14vh;
+  width:40vw;
+  height: 30vw;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255,255,255,0.5);
+  border-radius: 5vw;
   display: none;
 }
-
-#uv-register-sw:active {
-  background: #333333;
+html {
+  display:flex;
 }
-
-#uv-register-sw.show {
-  display: block;
+.infoDiv {
+  position: fixed;
+  backdrop-filter: blur(0px);
+  border: 3px solid rgba(255,255,255,0.5);
+  border-radius: 0 5vw 5vw 0;
+  top: 80vh;
+  left: 0vw;
+  width: 20%;
+  height: 18%;
 }
-
-.logo {
-  width: 150px;
-  height: 150px;
+.infoDiv p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+  position: relative;
+  left: 4%;
 }
-
-.logo-wrapper .text {
-  font-size: 75px;
-  color: #fff;
-}
-
-.logo-wrapper h1 {
-  color: white;
-}
-
-footer {
-  margin-top: auto;
-  width: 93%;
-  align-self: center;
-  height: 80px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-footer a,
-footer span {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
-}
-
-footer a {
-  cursor: pointer;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-.desc p {
-  width: 560px;
-  color: rgba(253, 253, 253, 0.514);
-}
-
-#uv-address {
-  background: none;
-  font-family: inherit;
-  padding: 0px 17px;
-  height: 48px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-  color: var(--text-color);
-  border-radius: 3px;
-  outline: none;
-  width: 350px;
-  margin-top: 5px;
-  border-radius: 50px;
-  color: #fff;
-  transition: border-radius 0.1s;
-}
-
-#uv-address:focus {
-  border: 1px solid rgba(253, 253, 253, 0.514);
-  border-radius: 6px;
-}
-
-.credit {
-  border-radius: 10px;
-  padding: 10px;
-  display: block;
-  border: #fff 1px solid;
-  color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-.credit label {
-  margin-left: auto;
-  margin-right: 15px;
-}
-
-.credit a,
-.credit label {
-  color: white;
-  text-decoration: underline;
-  text-align: right;
-}
-
-.credit pre {
-  display: none;
+.navBar {
+  position: fixed;
+  left:0%;
   width: 100%;
+  height: 5%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 0;
+  cursor:pointer;
 }
-
-.credit label::after {
-  content: "show license";
-  cursor: pointer;
+.navBar button {
+  float: right;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  width: 5%;
+  height: 100%;
+  border-radius: 1vw;
+  background-color: transparent;
+  font-size: 1vw;
+  backdrop-filter: blur(5px);
+  border: 3px solid rgba(255,255,255,0.2);
+  transition: 0.3s;
+  cursor:pointer;
 }
-
-.credit input:checked + label::after {
-  content: "hide license";
-}
-
-.credit input:checked ~ pre {
-  display: block;
+.navBar button:hover {
+  float: right;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  width: 5%;
+  height: 100%;
+  font-size: 1vw;
+  border-radius: 1vw;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.5);
+  cursor:pointer;
+}  
+#navbarText {
+  position: fixed;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5vw;
+  top:-1.2vw;
+  left: 1vw;
+  cursor:pointer;
 }
