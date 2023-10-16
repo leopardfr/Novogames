@@ -1,16 +1,3 @@
-document.getElementById("passwordForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  var password = document.getElementById("password").value;
-  
-  // Perform password validation here
-  // Example:
-  if (password === "password123") {
-    alert("Password is correct!");
-  } else {
-    alert("Password is incorrect!");
-  }
-});
-
 
 "use strict";
 /**
